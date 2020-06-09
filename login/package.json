@@ -1,0 +1,22 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "description": "microservice",
+  "main": "server.js",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.9.18",
+    "nodemon": "^2.0.4",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "prod": "set NODE_ENV=production && node ./build/server.js",
+    "start": "set NODE_ENV=development && nodemon server.js"
+  },
+  "author": "marvellous",
+  "license": "ISC"
+}

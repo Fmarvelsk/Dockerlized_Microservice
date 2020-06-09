@@ -1,0 +1,49 @@
+version: '3'
+services:
+  web:
+    build: './login'
+    ports:
+      - "4000:4000"
+
+  search:
+    build: './logout'
+    ports:
+      - "4001:4000"
+    depends_on: 
+      - db
+    environment:
+      - MONGO_DB_URI=mongodb://db/marv
+
+  books:
+    build: './register'
+    ports:
+      - "4002:4000"
+    depends_on: 
+      - db
+    environment:
+      - MONGO_DB_URI=mongodb://db/marv
+
+  videos:
+    build: './reset_password'
+    ports:
+      - "3003:3000"
+    depends_on: 
+      - db
+    environment:
+      - MONGO_DB_URI=mongodb://db/marv
+  
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:8080"
+    
+    depends_on:
+      - login
+      - logout
+      - register
+      - reset_password

@@ -1,0 +1,21 @@
+{
+  "name": "reset_password",
+  "version": "1.0.0",
+  "description": "reset_password",
+  "main": "app.js",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "mongoose": "^5.9.18",
+    "nodemon": "^2.0.4",
+    "passport": "^0.4.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "prod": "set NODE_ENV=production && node ./build/app.js",
+    "start": "set NODE_ENV=development && nodemon ./app.js" 
+  },
+  "author": "marvellous",
+  "license": "ISC"
+}
